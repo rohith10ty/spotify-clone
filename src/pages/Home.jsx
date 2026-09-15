@@ -157,7 +157,7 @@ export default function Home() {
           }
         `}
       >
-        <div className="flex flex-wrap items-center gap-2.5">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none no-scrollbar whitespace-nowrap">
           {LANGUAGES.map((lang) => {
             const isSelected = selectedLanguage === lang;
             return (

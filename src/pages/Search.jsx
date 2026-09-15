@@ -116,18 +116,18 @@ export default function Search() {
         <div className="mb-4 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
           <div
             className={`
-              flex h-12 flex-1 max-w-[500px] items-center rounded-full px-4 shadow-sm transition
+              flex h-[48px] min-h-[48px] w-full flex-1 max-w-[560px] items-center rounded-full px-5 shadow-md transition-all duration-200
               ${
                 theme === "dark"
-                  ? "bg-[#242424] text-white border border-white/10 focus-within:border-red-500/50"
-                  : "bg-[#faf8f5] text-stone-900 border border-stone-300/80 focus-within:border-red-500 focus-within:shadow-md"
+                  ? "bg-[#242424] text-white border border-white/10 focus-within:border-red-500/60 focus-within:bg-[#282828]"
+                  : "bg-white text-stone-900 border border-stone-300/80 focus-within:border-red-500 focus-within:shadow-lg"
               }
             `}
           >
             <SearchIcon
-              size={20}
-              className={`mr-3 shrink-0 ${
-                theme === "dark" ? "text-[#a7a7a7]" : "text-stone-400"
+              size={21}
+              className={`mr-3.5 shrink-0 ${
+                theme === "dark" ? "text-[#b3b3b3]" : "text-stone-400"
               }`}
             />
 
@@ -136,10 +136,10 @@ export default function Search() {
               onChange={(e) => handleQueryChange(e.target.value)}
               placeholder="What do you want to listen to? (e.g. Sid Sriram, Butta Bomma, Kesariya)"
               className={`
-                min-w-0 flex-1 bg-transparent text-[14px] font-semibold outline-none
+                min-w-0 flex-1 bg-transparent text-[14.5px] font-medium outline-none
                 ${
                   theme === "dark"
-                    ? "text-white placeholder:text-[#777]"
+                    ? "text-white placeholder:text-[#888]"
                     : "text-stone-900 placeholder:text-stone-400"
                 }
               `}
@@ -147,7 +147,7 @@ export default function Search() {
 
             {isSearching && (
               <Loader2
-                size={18}
+                size={20}
                 className="animate-spin text-red-500 mr-2 shrink-0"
               />
             )}
@@ -155,9 +155,10 @@ export default function Search() {
             {query && !isSearching && (
               <button
                 onClick={() => handleQueryChange("")}
-                className="opacity-70 hover:opacity-100 p-1"
+                className="opacity-70 hover:opacity-100 p-1 mr-1"
+                title="Clear search"
               >
-                <X size={18} />
+                <X size={20} />
               </button>
             )}
           </div>

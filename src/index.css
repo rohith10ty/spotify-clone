@@ -299,6 +299,7 @@ img {
 
 ::view-transition-new(root) {
   z-index: 999999;
+  will-change: clip-path;
 }
 
 ::view-transition-old(root) {

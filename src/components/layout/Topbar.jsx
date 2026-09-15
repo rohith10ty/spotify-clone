@@ -131,7 +131,7 @@ export default function Topbar() {
             onClick={() => navigate("/")}
             title="Home"
             className={`
-              flex h-11 w-11 shrink-0 items-center justify-center rounded-full transition-all cursor-pointer
+              flex h-[48px] w-[48px] min-h-[48px] min-w-[48px] shrink-0 items-center justify-center rounded-full transition-all cursor-pointer
               ${
                 location.pathname === "/"
                   ? theme === "dark"
@@ -144,7 +144,7 @@ export default function Topbar() {
             `}
           >
             <Home
-              size={21}
+              size={22}
               fill={location.pathname === "/" ? "currentColor" : "none"}
             />
           </motion.button>
@@ -156,7 +156,7 @@ export default function Topbar() {
             <motion.div
               whileFocusWithin={{ scale: 1.01 }}
               className={`
-                flex h-11 w-full items-center rounded-full px-3.5 transition-all
+                flex h-[48px] min-h-[48px] w-full items-center rounded-full px-4.5 transition-all
                 ${
                   theme === "dark"
                     ? "bg-[#242424] text-white border border-white/[0.08] hover:bg-[#2a2a2a] focus-within:border-red-500/50 focus-within:bg-[#282828]"
@@ -165,8 +165,8 @@ export default function Topbar() {
               `}
             >
               <Search
-                size={19}
-                className={`mr-2.5 shrink-0 ${
+                size={21}
+                className={`mr-3 shrink-0 ${
                   theme === "dark" ? "text-[#b3b3b3]" : "text-stone-400"
                 }`}
               />
@@ -183,7 +183,7 @@ export default function Topbar() {
                 onKeyDown={handleSearchSubmit}
                 placeholder="What do you want to play? (Telugu, Tamil, Hindi, English...)"
                 className={`
-                  min-w-0 flex-1 bg-transparent text-[13.5px] font-medium outline-none
+                  min-w-0 flex-1 bg-transparent text-[14px] font-medium outline-none
                   ${
                     theme === "dark"
                       ? "text-white placeholder:text-[#888]"
