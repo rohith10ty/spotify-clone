@@ -172,7 +172,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative z-10 px-4 pb-20 pt-3 sm:px-6 lg:pb-6">
+      <div className="relative z-10 px-4 pb-36 sm:pb-24 pt-3 sm:px-6 lg:pb-6">
         {/* TOP: Playlists Section with Clear, Spacious, Perfectly Aligned Cards */}
         <div className="mb-6">
           <h2

@@ -123,8 +123,8 @@ export default function Topbar() {
           <SpotifyMark />
         </div>
 
-        {/* CENTER: Home Button + Omnibar Search Bar (100% Dead-Centered in Window) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-2 w-full max-w-[540px] px-3 pointer-events-auto">
+        {/* CENTER: Home Button + Omnibar Search Bar (Hidden on Mobile to Prevent Overlap) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center gap-2 w-full max-w-[540px] px-3 pointer-events-auto">
           <motion.button
             whileHover={{ scale: 1.06 }}
             whileTap={{ scale: 0.92 }}
@@ -293,8 +293,24 @@ export default function Topbar() {
           </div>
         </div>
 
-        {/* RIGHT: Dark/Light Mode Switcher + Notifications + Profile / Login / Signup */}
-        <div className="flex items-center justify-end gap-2 sm:gap-3 shrink-0 min-w-[110px] sm:min-w-[140px] z-10">
+        {/* RIGHT: Mobile Search + Dark/Light Mode Switcher + Notifications + Profile / Login / Signup */}
+        <div className="flex items-center justify-end gap-1.5 sm:gap-3 shrink-0 z-10">
+          {/* Mobile Search Button */}
+          <button
+            onClick={() => navigate("/search")}
+            aria-label="Search"
+            className={`
+              md:hidden flex h-9 w-9 items-center justify-center rounded-full transition cursor-pointer
+              ${
+                theme === "dark"
+                  ? "text-[#b3b3b3] hover:text-white hover:bg-white/10"
+                  : "text-stone-600 hover:text-stone-900 hover:bg-[#ece7de]"
+              }
+            `}
+          >
+            <Search size={18} />
+          </button>
+
           {/* Theme Toggle Button with View Transition Ripple */}
           <ThemeToggleButton variant="circle" start="top-right" />
 
